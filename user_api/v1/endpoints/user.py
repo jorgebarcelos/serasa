@@ -7,8 +7,8 @@ from fastapi import Response
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 
-from models.user import UserModel
-from schemas.user import UserSchema
+from models.models import UserModel
+from schemas.schema import UserSchema
 from core.deps import get_session
 
 
