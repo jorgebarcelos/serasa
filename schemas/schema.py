@@ -1,4 +1,4 @@
-import datetime
+from datetime import date
 from typing import Optional
 from pydantic import BaseModel as SchemaBaseModel
 
@@ -9,8 +9,8 @@ class UserSchema(SchemaBaseModel):
     cpf: str
     email: str
     phone_number: str
-    created_at: datetime.date
-    updated_at: datetime.date
+    created_at: date = date.today()
+    updated_at: date = date.today()
 
     class Config:
         orm_mode = True
@@ -23,5 +23,5 @@ class OrderSchema(SchemaBaseModel):
     item_quantity: int
     item_price: float
     total_value: float
-    created_at: datetime.date
-    updated_at: datetime.date
+    created_at: date = date.today()
+    updated_at: date = date.today()
