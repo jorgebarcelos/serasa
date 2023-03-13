@@ -14,6 +14,7 @@ class UserModel(settings.DBBaseModel):
     phone_number: str = Column(String(100))
     created_at: datetime = datetime.date
     updated_at: datetime = datetime.date
+    orders = relationship('OrderModel', back_populates='user')
 
 
 class OrderModel(settings.DBBaseModel):
@@ -27,5 +28,4 @@ class OrderModel(settings.DBBaseModel):
     total_value: float = Column(Float())
     created_at: datetime = datetime.date
     updated_at: datetime = datetime.date
-
-    user = relationship('user', back_populates='order')
+    user = relationship('UserModel', back_populates='orders')
